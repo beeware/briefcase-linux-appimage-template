@@ -105,8 +105,8 @@ third-party library), you should install the library code into the
 directory on a desktop Python install.
 
 .. _cookiecutter: https://github.com/cookiecutter/cookiecutter
-.. _Download the Python Linux support package for x86_64: https://briefcase-support.s3-us-west-2.amazonaws.com/python/3.8/macOS/Python-3.8-linux-x86_64-support.b1.tar.gz
-.. _Toga: https://beeware.org/project/projects/libraries/toga
-.. _GTK+: https://python-gtk-3-tutorial.readthedocs.io/
 .. _linuxdeploy: https://github.com/linuxdeploy/linuxdeploy
 .. _linuxdeploy AppImage: https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
+.. _Download the Python Linux support package for x86_64: https://briefcase-support.s3-us-west-2.amazonaws.com/python/3.8/linux/Python-3.8-linux-x86_64-support.b1.tar.gz
+.. _Toga: https://beeware.org/project/projects/libraries/toga
+.. _GTK+: https://python-gtk-3-tutorial.readthedocs.io/
