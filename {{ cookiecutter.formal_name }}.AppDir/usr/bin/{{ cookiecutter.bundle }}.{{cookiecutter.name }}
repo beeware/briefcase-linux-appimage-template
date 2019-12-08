@@ -1,10 +1,7 @@
 #!/bin/bash
-echo "THIS HAS CHANGED"
-echo "PATH $(dirname "$0")"
-echo "HELLO WORLD $@"
 export APPDIR=$(dirname "$0")
-echo "APPDIR IS $APPDIR"
+# echo "APPDIR IS $APPDIR"
 export PYTHONPATH=$APPDIR/usr/app:$APPDIR/usr/app_packages
-echo "PYTHONPATH IS $PYTHONPATH"
-echo "PATH IS $PATH"
+# echo "PYTHONPATH IS $PYTHONPATH"
+# echo "PATH IS $PATH"
 $APPDIR/usr/bin/python3 -s -m {{ cookiecutter.module_name }}
