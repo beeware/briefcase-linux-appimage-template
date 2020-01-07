@@ -109,6 +109,6 @@ directory on a desktop Python install.
 .. _cookiecutter: https://github.com/cookiecutter/cookiecutter
 .. _linuxdeploy: https://github.com/linuxdeploy/linuxdeploy
 .. _linuxdeploy AppImage: https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
-.. _Download the Python Linux support package for x86_64: https://briefcase-support.s3-us-west-2.amazonaws.com/python/3.8/linux/Python-3.8-linux-x86_64-support.b1.tar.gz
+.. _Download the Python Linux support package for x86_64: https://briefcase-support.org/python?platform=linux&arch=x86_64&version=3.8
 .. _Toga: https://beeware.org/project/projects/libraries/toga
 .. _GTK+: https://python-gtk-3-tutorial.readthedocs.io/
