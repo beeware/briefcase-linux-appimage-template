@@ -18,3 +18,11 @@ RUN apt-get update -y && \
 # Update pip
 RUN python3.5 -m pip install --upgrade pip
 RUN python3.5 -m pip install --upgrade setuptools
+RUN python3.5 -m pip install --upgrade wheel
+
+# Ensure Docker user UID:GID matches host user UID:GID (beeware/briefcase#403)
+ARG HOST_UID
+ARG HOST_GID
+RUN groupadd --gid $HOST_GID briefcase || true
+RUN useradd --uid $HOST_UID --gid $HOST_GID brutus --home /home/brutus
+USER brutus
