@@ -29,6 +29,7 @@ RUN apt-get update -y && \
 RUN python${PY_VERSION} -m ensurepip
 RUN python${PY_VERSION} -m pip install --upgrade pip
 RUN python${PY_VERSION} -m pip install --upgrade setuptools
+RUN python${PY_VERSION} -m pip install --upgrade wheel
 
 # Ensure Docker user UID:GID matches host user UID:GID (beeware/briefcase#403)
 ARG HOST_UID
