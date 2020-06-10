@@ -35,5 +35,6 @@ RUN python${PY_VERSION} -m pip install --upgrade wheel
 ARG HOST_UID
 ARG HOST_GID
 RUN groupadd --gid $HOST_GID briefcase || true
-RUN useradd --uid $HOST_UID --gid $HOST_GID brutus --home /home/brutus
+# In case briefcase is run as root, user brutus will reuse UID:GID of containers root account (beeware/briefcase#416)
+RUN useradd --non-unique --uid $HOST_UID --gid $HOST_GID brutus --home /home/brutus
 USER brutus
