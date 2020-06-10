@@ -1,0 +1,2 @@
+Enables running briefcase as root on Linux.
+
