@@ -4,4 +4,4 @@ export APPDIR=$(dirname "$0")
 export PYTHONPATH=$APPDIR/usr/app:$APPDIR/usr/app_packages
 # echo "PYTHONPATH IS $PYTHONPATH"
 # echo "PATH IS $PATH"
-$APPDIR/usr/bin/python3 -s -m {{ cookiecutter.module_name }}
+$APPDIR/usr/bin/python3 -s -m {{ cookiecutter.module_name }} $@
