@@ -30,6 +30,7 @@ RUN python${PY_VERSION} -m ensurepip
 RUN python${PY_VERSION} -m pip install --upgrade pip
 RUN python${PY_VERSION} -m pip install --upgrade setuptools
 RUN python${PY_VERSION} -m pip install --upgrade wheel
+RUN CONSTRAINTS="/constraints.txt"; pip config --global set global.constraint $CONSTRAINTS; echo "pycairo<1.20" > $CONSTRAINTS
 
 # Ensure Docker user UID:GID matches host user UID:GID (beeware/briefcase#403)
 ARG HOST_UID
