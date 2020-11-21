@@ -37,7 +37,7 @@ However, if you *do* want use this template directly...
    template. This will give you a self-contained Python install. If installed
    correctly, there should be a ``My Project/My
    Project.AppDir/usr/bin/python3`` binary, a ``My Project/My
-   Project.AppDir/usr/lib/python3.8`` directory, as well as some other
+   Project.AppDir/usr/lib/python3.7`` directory, as well as some other
    Python-related files.
 
    Alternatively, you can download the `Python-Linux-support`_ project, and
@@ -70,7 +70,7 @@ looks something like::
                     python3
                     ...
                 lib/
-                    python3.8/
+                    python3.7/
                     ...
                 share/
                     ...
