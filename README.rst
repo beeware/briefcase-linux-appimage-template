@@ -4,6 +4,8 @@ Briefcase Linux AppImage Template
 A `Cookiecutter <https://github.com/cookiecutter/cookiecutter/>`__ template for
 building Python apps that will run under Linux, packaged as an AppImage.
 
+**Python 3.5 has reached End Of Life. This repository branch is no longer maintained.**
+
 **This repository branch contains a template for Python 3.5**.
 Other Python versions are available by cloning other branches of repository.
 
@@ -37,7 +39,7 @@ However, if you *do* want use this template directly...
    template. This will give you a self-contained Python install. If installed
    correctly, there should be a ``My Project/My
    Project.AppDir/usr/bin/python3`` binary, a ``My Project/My
-   Project.AppDir/usr/lib/python3.8`` directory, as well as some other
+   Project.AppDir/usr/lib/python3.5`` directory, as well as some other
    Python-related files.
 
    Alternatively, you can download the `Python-Linux-support`_ project, and
@@ -70,7 +72,7 @@ looks something like::
                     python3
                     ...
                 lib/
-                    python3.8/
+                    python3.5/
                     ...
                 share/
                     ...
