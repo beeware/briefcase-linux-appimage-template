@@ -4,7 +4,7 @@ Briefcase Linux AppImage Template
 A `Cookiecutter <https://github.com/cookiecutter/cookiecutter/>`__ template for
 building Python apps that will run under Linux, packaged as an AppImage.
 
-**This is the development version of the repository. It contains a template for Python 3.8**.
+**This is the development version of the repository. It contains a template for Python 3.9**.
 Other Python versions are available by cloning other branches of repository.
 
 Using this template
@@ -24,7 +24,7 @@ However, if you *do* want use this template directly...
 
 2. Run ``cookiecutter`` on the template::
 
-    $ cookiecutter https://github.com/beeware/briefcase-linux-appimage-template --checkout 3.8
+    $ cookiecutter https://github.com/beeware/briefcase-linux-appimage-template --checkout 3.9
 
    This will ask you for a number of details of your application, including the
    `name` of your application (which should be a valid PyPI identifier), and
@@ -37,7 +37,7 @@ However, if you *do* want use this template directly...
    template. This will give you a self-contained Python install. If installed
    correctly, there should be a ``My Project/My
    Project.AppDir/usr/bin/python3`` binary, a ``My Project/My
-   Project.AppDir/usr/lib/python3.8`` directory, as well as some other
+   Project.AppDir/usr/lib/python3.9`` directory, as well as some other
    Python-related files.
 
    Alternatively, you can download the `Python-Linux-support`_ project, and
@@ -70,7 +70,7 @@ looks something like::
                     python3
                     ...
                 lib/
-                    python3.8/
+                    python3.9/
                     ...
                 share/
                     ...
@@ -109,6 +109,6 @@ directory on a desktop Python install.
 .. _cookiecutter: https://github.com/cookiecutter/cookiecutter
 .. _linuxdeploy: https://github.com/linuxdeploy/linuxdeploy
 .. _linuxdeploy AppImage: https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
-.. _Download the Python Linux support package for x86_64: https://briefcase-support.org/python?platform=linux&arch=x86_64&version=3.8
+.. _Download the Python Linux support package for x86_64: https://briefcase-support.org/python?platform=linux&arch=x86_64&version=3.9
 .. _Toga: https://beeware.org/project/projects/libraries/toga
 .. _GTK+: https://python-gtk-3-tutorial.readthedocs.io/
