@@ -28,8 +28,9 @@ RUN apt-get update -y && \
         python${PY_VERSION}-venv \
         ${SYSTEM_REQUIRES}
 
-# Install (and update) pip
+# Install (and update) pip, disabling the global cache
 RUN python${PY_VERSION} -m ensurepip
+RUN python${PY_VERSION} -m pip config set global.cache-dir false
 RUN python${PY_VERSION} -m pip install --upgrade pip
 RUN python${PY_VERSION} -m pip install --upgrade setuptools
 RUN python${PY_VERSION} -m pip install --upgrade wheel
