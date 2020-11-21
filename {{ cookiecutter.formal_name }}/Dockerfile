@@ -36,8 +36,10 @@ RUN python${PY_VERSION} -m pip install --upgrade setuptools
 RUN python${PY_VERSION} -m pip install --upgrade wheel
 
 # Ensure Docker user UID:GID matches host user UID:GID (beeware/briefcase#403)
+# Use --non-unique to avoid problems when the UID:GID of the host user
+# collides with entries provided by the Docker container.
 ARG HOST_UID
 ARG HOST_GID
-RUN groupadd --gid $HOST_GID briefcase || true
-RUN useradd --uid $HOST_UID --gid $HOST_GID brutus --home /home/brutus
+RUN groupadd --non-unique --gid $HOST_GID briefcase
+RUN useradd --non-unique --uid $HOST_UID --gid $HOST_GID brutus --home /home/brutus
 USER brutus
