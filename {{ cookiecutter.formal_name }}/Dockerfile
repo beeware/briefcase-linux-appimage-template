@@ -20,18 +20,23 @@ RUN apt-get update -y && \
         ca-certificates
 RUN apt-add-repository ppa:deadsnakes/ppa
 
-# Install git, Python, and any packages required
+# Install git, Python, and any packages required. Ubuntu python packages
+# disable ensurepip, which the deadsnakes PPA re-enables if python*-venv is
+# installed, but the deadsnakes PPA only provides packages for python version
+# unavailable in the selected Ubuntu release. Thus, we use the system
+# python3-pip package for those python versions.
 RUN apt-get update -y && \
     apt-get install -y \
         git \
         python${PY_VERSION}-dev \
         python${PY_VERSION}-venv \
+        python3-pip \
         ${SYSTEM_REQUIRES}
 
-# Install (and update) pip, disabling the global cache
-RUN python${PY_VERSION} -m ensurepip
-RUN python${PY_VERSION} -m pip config set global.cache-dir false
+# Install (and update) pip, disabling the global cache. We upgrade pip *before*
+# disabling the system cache because pip 9 predates the config subcommand.
 RUN python${PY_VERSION} -m pip install --upgrade pip
+RUN python${PY_VERSION} -m pip config set global.cache-dir false
 RUN python${PY_VERSION} -m pip install --upgrade setuptools
 RUN python${PY_VERSION} -m pip install --upgrade wheel
 
