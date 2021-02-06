@@ -9,6 +9,7 @@ WORKDIR /app
 # Set up Docker build arguments
 ARG PY_VERSION
 ARG SYSTEM_REQUIRES
+ARG DEBIAN_FRONTEND=noninteractive
 
 # Install the deadsnakes PPA so we can get arbitrary Python versions
 RUN apt-get update -y && \
