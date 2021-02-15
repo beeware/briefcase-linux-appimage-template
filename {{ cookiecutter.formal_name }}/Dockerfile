@@ -10,6 +10,9 @@ WORKDIR /app
 ARG PY_VERSION
 ARG SYSTEM_REQUIRES
 
+# Make sure installation of tzdata is non-interactive
+ENV DEBIAN_FRONTEND="noninteractive"
+
 # Install the deadsnakes PPA so we can get arbitrary Python versions
 RUN apt-get update -y && \
     apt-get install -y \
