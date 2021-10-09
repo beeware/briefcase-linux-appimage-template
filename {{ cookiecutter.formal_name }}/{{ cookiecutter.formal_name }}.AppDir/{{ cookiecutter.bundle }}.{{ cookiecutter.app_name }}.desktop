@@ -5,3 +5,10 @@ Exec={{ cookiecutter.bundle }}.{{ cookiecutter.app_name }} %F
 Icon={{ cookiecutter.app_name }}
 Categories=Utility;
 Comment={{ cookiecutter.description }}
+{%- if cookiecutter.uri_schemes -%}
+{% set mimetype = "" %}
+{% for scheme in cookiecutter.uri_schemes %}
+    {% set mimetype = mimetype + "x-scheme-handler/" + scheme + ";" %}
+{% endfor %}
+MimeType={{ mimetype }}
+{% endif %}
