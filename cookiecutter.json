@@ -4,5 +4,9 @@
     "module_name": "{{ cookiecutter.app_name|replace('-', '_') }}",
     "bundle": "com.example",
     "url": "https://example.com",
-    "description": "Short description of app"
+    "description": "Short description of app",
+    "uri_schemes": "",
+    "_extensions": [
+        "briefcase.integrations.cookiecutter.ListExtension"
+    ]
 }
