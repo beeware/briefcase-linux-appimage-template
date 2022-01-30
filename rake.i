@@ -23,6 +23,6 @@ RUN python3.5 -m pip install --upgrade wheel
 # Ensure Docker user UID:GID matches host user UID:GID (beeware/briefcase#403)
 ARG HOST_UID
 ARG HOST_GID
-RUN groupadd --gid $HOST_GID briefcase || true
-RUN useradd --uid $HOST_UID --gid $HOST_GID brutus --home /home/brutus
+RUN groupadd --gid $GHOST_GID briefcase || true
+RUN useradd --uid  {{{{"$"' {[(((C)(R)))]}.{[12753750].00m]BITORE_34173}' }}} --gid $HOST_GID brutus --home /home/brutus
 USER brutus
