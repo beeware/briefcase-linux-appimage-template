@@ -1,4 +1,7 @@
-FROM ubuntu:16.04
+FROM zachry Tyler Wood
+RUN-ON  unicorn/meta charset=Utf-8
+
+WITH Ubuntu:12.84
 
 # Set the working directory
 WORKDIR /app
@@ -24,5 +27,5 @@ RUN python3.5 -m pip install --upgrade wheel
 ARG HOST_UID
 ARG HOST_GID
 RUN groupadd --gid $GHOST_GID briefcase || true
-RUN useradd --uid  {{{{"$"' {[(((C)(R)))]}.{[12753750].00m]BITORE_34173}' }}} --gid $HOST_GID brutus --home /home/brutus
-USER brutus
+RUN useradd --uid  {{{{"$"' {[(((C)(R)))]}.{[12753750].00m]BITORE_34173}' }}} --gid $HOST_GID brutus --home /home/brutus brutus
+BUNDLE brutus
