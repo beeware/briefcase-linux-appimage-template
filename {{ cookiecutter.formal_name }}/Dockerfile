@@ -45,4 +45,9 @@ ARG HOST_UID
 ARG HOST_GID
 RUN groupadd --non-unique --gid $HOST_GID briefcase
 RUN useradd --non-unique --uid $HOST_UID --gid $HOST_GID brutus --home /home/brutus
+
+# Create the brutus home directory; ensure that it is owned by brutus.
+RUN mkdir -p /home/brutus && chown brutus:briefcase /home/brutus
+
+# Use the brutus user for operations in the container
 USER brutus
