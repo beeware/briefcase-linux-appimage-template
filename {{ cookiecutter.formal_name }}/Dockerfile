@@ -49,3 +49,6 @@ RUN apt-get update -y && \
 
 # Use the brutus user for operations in the container
 USER brutus
+
+# Add path for linuxdeploy plugins
+ENV PATH="/home/brutus/.briefcase/tools/linuxdeploy_plugins:${PATH}"
