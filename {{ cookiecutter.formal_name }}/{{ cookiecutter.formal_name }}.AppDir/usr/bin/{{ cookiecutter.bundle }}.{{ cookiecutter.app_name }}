@@ -1,5 +1,6 @@
 #!/bin/bash
 export APPDIR=$(dirname "$0")
+cd $APPDIR
 # echo "APPDIR IS $APPDIR"
 export PYTHONPATH=$APPDIR/usr/app:$APPDIR/usr/app_packages
 # echo "PYTHONPATH IS $PYTHONPATH"
