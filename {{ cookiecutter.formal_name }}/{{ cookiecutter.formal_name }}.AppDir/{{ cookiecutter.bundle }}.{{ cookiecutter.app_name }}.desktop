@@ -2,7 +2,7 @@
 Type=Application
 Name={{ cookiecutter.formal_name }}
 Exec={{ cookiecutter.bundle }}.{{ cookiecutter.app_name }} %F
-Icon={{ cookiecutter.app_name }}
+Icon={{ cookiecutter.bundle }}.{{ cookiecutter.app_name }}
 Categories=Utility;
 Comment={{ cookiecutter.description }}
 StartupWMClass={{ cookiecutter.formal_name }}
