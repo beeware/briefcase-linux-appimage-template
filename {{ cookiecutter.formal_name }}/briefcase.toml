@@ -1,7 +1,10 @@
+# Generated using Python {{ cookiecutter.python_version }}
 [paths]
 app_path = "{{ cookiecutter.formal_name }}.AppDir/usr/app"
 app_packages_path = "{{ cookiecutter.formal_name }}.AppDir/usr/app_packages"
 support_path = "{{ cookiecutter.formal_name }}.AppDir/usr"
+{{ {"3.8": "support_revision = 6", "3.9": "support_revision = 4", "3.10": "support_revision = 3"}.get(cookiecutter.python_version|py_tag, "") }}
+
 icon.16 = "{{ cookiecutter.formal_name }}.AppDir/usr/share/icons/hicolor/16x16/apps/{{ cookiecutter.bundle }}.{{ cookiecutter.app_name }}.png"
 icon.32 = "{{ cookiecutter.formal_name }}.AppDir/usr/share/icons/hicolor/32x32/apps/{{ cookiecutter.bundle }}.{{ cookiecutter.app_name }}.png"
 icon.64 = "{{ cookiecutter.formal_name }}.AppDir/usr/share/icons/hicolor/64x64/apps/{{ cookiecutter.bundle }}.{{ cookiecutter.app_name }}.png"
