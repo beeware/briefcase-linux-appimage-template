@@ -1,0 +1,37 @@
+[tool.briefcase]
+project_name = "Hello Toga"
+bundle = "org.beeware"
+version = "0.0.1"
+url = "https://beeware.org/"
+license = "BSD license"
+author = 'Brutus'
+author_email = "contact@beeware.org"
+
+[tool.briefcase.app.verify-toga]
+formal_name = "Hello Toga"
+description = "A Toga test app"
+icon = "src/verify_toga/resources/verify-toga"
+sources = ['src/verify_toga']
+requires = [
+]
+
+
+[tool.briefcase.app.verify-toga.linux]
+requires = [
+    'toga-gtk>=0.3.0.dev38',
+]
+
+[tool.briefcase.app.verify-toga.linux.appimage]
+template = "../../.."
+system_requires = [
+    'gir1.2-webkit-3.0',
+    'libcairo2-dev',
+    'libgirepository1.0-dev',
+    'libgtk-3-dev',
+    'libpango1.0-dev',
+    'librsvg2-dev',
+    'libwebkitgtk-3.0-0',
+]
+linuxdeploy_plugins = [
+    'DEPLOY_GTK_VERSION=3 gtk',
+]
