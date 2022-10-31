@@ -17,33 +17,9 @@ requires = [
     'pyside2>=5.15.2',
 ]
 
-
-[tool.briefcase.app.verify-pyside2.macOS]
-requires = [
-    'std-nslog~=1.0.0'
-]
-
 [tool.briefcase.app.verify-pyside2.linux]
 requires = []
 
 [tool.briefcase.app.verify-pyside2.linux.appimage]
 system_requires = []
 linuxdeploy_plugins = []
-
-[tool.briefcase.app.verify-pyside2.linux.flatpak]
-flatpak_runtime = 'org.kde.Platform'
-flatpak_runtime_version = '6.3'
-flatpak_sdk = 'org.kde.Sdk'
-
-[tool.briefcase.app.verify-pyside2.windows]
-requires = []
-
-# Mobile deployments
-[tool.briefcase.app.verify-pyside2.iOS]
-supported = false
-
-[tool.briefcase.app.verify-pyside2.android]
-supported = false
-
-[tool.briefcase.app.verify-pyside2.web]
-supported = false

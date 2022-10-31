@@ -6,9 +6,6 @@ on:
       - main
   workflow_call:
 
-env:
-  python_version: "3.9"
-
 defaults:
   run:
     shell: bash # https://github.com/beeware/briefcase/pull/912
@@ -18,11 +15,11 @@ jobs:
     name: Build apps
     strategy:
       matrix:
-        os_name: ["linux"]
+        python_version: ["3.8", "3.9", "3.10", "3.11"]
+        # Pyside2 and Pyside6, and PPB configs aren't known to work on Linux at this time.
         framework: ["toga"]
         include:
-          - os_name: linux
-            # Need to use at least 22.04 to get the bugfix in flatpak for handling spaces in filenames.
+          - # Need to use at least 22.04 to get the bugfix in flatpak for handling spaces in filenames.
             platform: ubuntu-22.04
             briefcase-data-dir: ~/.cache/briefcase
             pip-cache-dir: ~/.cache/pip
@@ -33,7 +30,7 @@ jobs:
       - name: Cache Briefcase tools
         uses: actions/cache@v3.0.11
         with:
-          key: briefcase-${{ matrix.platform }}
+          key: briefcase-${{ matrix.platform }}-${{ matrix.python_version }}
           path: |
             ~/.cookiecutters
             ${{ matrix.briefcase-data-dir }}
@@ -45,11 +42,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4.3.0
         with:
-          python-version: ${{ env.python_version }}
-      - name: Install system dependencies
-        if: matrix.platform == 'ubuntu-22.04'
-        run: |
-          sudo apt-get install -y flatpak flatpak-builder
+          python-version: ${{ matrix.python_version }}
       - name: Install packages
         run: pip install briefcase
       - name: Build App

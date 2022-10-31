@@ -22,7 +22,6 @@ requires = [
 ]
 
 [tool.briefcase.app.verify-toga.linux.appimage]
-template = "../../.."
 system_requires = [
     'gir1.2-webkit-3.0',
     'libcairo2-dev',
@@ -35,3 +34,4 @@ system_requires = [
 linuxdeploy_plugins = [
     'DEPLOY_GTK_VERSION=3 gtk',
 ]
+template = "../../.."
