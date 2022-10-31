@@ -25,6 +25,14 @@ jobs:
             pip-cache-dir: ~/.cache/pip
             # cache action cannot cache docker images (actions/cache#31)
             # docker-cache-dir: /var/lib/docker
+
+        exclude:
+          # PySide 2 and 6 don't currently publish binary wheels
+          # that are compatible with Python 3.11 and/or Ubuntu 18.04
+          - python_version: "3.11"
+            framework: "pyside2"
+          - python_version: "3.11"
+            framework: "pyside6"
     runs-on: ${{ matrix.platform }}
     steps:
       - name: Cache Briefcase tools
