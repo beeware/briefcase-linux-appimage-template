@@ -6,6 +6,7 @@
     "url": "https://example.com",
     "description": "Short description of app",
     "python_version": "3.X.0",
+    "dockerfile_extra_content": "",
     "_extensions": [
         "briefcase.integrations.cookiecutter.PythonVersionExtension"
     ]

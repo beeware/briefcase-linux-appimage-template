@@ -49,3 +49,6 @@ RUN apt-get update -y && \
 
 # Use the brutus user for operations in the container
 USER brutus
+
+# ========== START USER PROVIDED CONTENT ==========
+{{ cookiecutter.dockerfile_extra_content }}
