@@ -27,12 +27,6 @@ RUN apt-get update -y && \
         python${PY_VERSION}-dev \
         python${PY_VERSION}-venv
 
-# Install (and update) pip, disabling the global cache
-RUN python${PY_VERSION} -m ensurepip && \
-    python${PY_VERSION} -m pip config set global.cache-dir false && \
-    python${PY_VERSION} -m pip install --upgrade pip && \
-    python${PY_VERSION} -m pip install --upgrade setuptools wheel
-
 # Ensure Docker user UID:GID matches host user UID:GID (beeware/briefcase#403)
 # Use --non-unique to avoid problems when the UID:GID of the host user
 # collides with entries provided by the Docker container.
@@ -42,7 +36,13 @@ RUN groupadd --non-unique --gid $HOST_GID briefcase && \
     useradd --non-unique --uid $HOST_UID --gid $HOST_GID brutus --home /home/brutus && \
     mkdir -p /home/brutus && chown brutus:briefcase /home/brutus
 
-# Install system packages required by app
+# Ensure pip is available; do this as the brutus user
+# to ensure that the pip cache is created user-readable.
+USER brutus
+RUN python${PY_VERSION} -m ensurepip
+
+# As root, Install system packages required by app
+USER root
 ARG SYSTEM_REQUIRES
 RUN apt-get update -y && \
     apt-get install --no-install-recommends -y ${SYSTEM_REQUIRES}
