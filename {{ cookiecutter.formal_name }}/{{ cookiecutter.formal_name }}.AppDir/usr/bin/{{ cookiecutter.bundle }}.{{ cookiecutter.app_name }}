@@ -8,4 +8,4 @@ if [[ -z "${BRIEFCASE_MAIN_MODULE}" ]]; then
     BRIEFCASE_MAIN_MODULE="{{ cookiecutter.module_name }}"
 fi
 # echo "BRIEFCASE_MAIN_MODULE=${BRIEFCASE_MAIN_MODULE}"
-"${APPDIR}/usr/bin/python3" -u -s -c "import runpy, sys; sys.path.pop(0); runpy.run_module('${BRIEFCASE_MAIN_MODULE}', run_name='__main__', alter_sys=True)" "$@"
+"${APPDIR}/usr/bin/python3" -u -s -X utf8 -c "import runpy, sys; sys.path.pop(0); runpy.run_module('${BRIEFCASE_MAIN_MODULE}', run_name='__main__', alter_sys=True)" "$@"
