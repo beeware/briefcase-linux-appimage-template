@@ -45,7 +45,7 @@ RUN python${PY_VERSION} -m ensurepip
 USER root
 ARG SYSTEM_REQUIRES
 RUN apt-get update -y && \
-    apt-get install --no-install-recommends -y ${SYSTEM_REQUIRES}
+    apt-get install --no-install-recommends -y build-essential ${SYSTEM_REQUIRES}
 
 # Use the brutus user for operations in the container
 USER brutus
