@@ -31,7 +31,7 @@ jobs:
       fail-fast: false
       matrix:
         python-version: [ "3.8", "3.9", "3.10", "3.11" ]
-        framework: [ "toga", "pyside2", "pyside6", "ppb" ]
+        framework: [ "toga", "pyside2", "pyside6", "ppb", "pygame" ]
         exclude:
           # PySide 2 and 6 don't currently publish binary wheels
           # that are compatible with Python 3.11 and/or Ubuntu 18.04
