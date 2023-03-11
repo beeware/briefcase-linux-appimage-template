@@ -1,19 +1,24 @@
-# Use Ubuntu 18.04 (bionic) as a base image. This ensures that we're using an
-# old version of libc, maximizing the compatibility of the image when it is
-# included in an AppImage.
+{% if cookiecutter.manylinux_tag %}
+FROM quay.io/pypa/{{ cookiecutter.manylinux_tag }}
+{%- else %}
+# Ubuntu:18.04 based AppImages are for legacy projects
 FROM ubuntu:18.04
+{%- endif %}
 
 # Set the working directory
 WORKDIR /app
 
+{% if cookiecutter.vendor_base == "debian" %}
 # Make sure installation of tzdata is non-interactive
 ENV DEBIAN_FRONTEND="noninteractive"
 
 # Install git and file (for linuxdeploy)
 RUN apt-get update -y && \
-    apt-get install --no-install-recommends -y \
-        git \
-        file
+    apt-get install --no-install-recommends -y git file
+{% else %}
+# Install git and file (for linuxdeploy)
+RUN yum install -y git file
+{% endif %}
 
 # Ensure Docker user UID:GID matches host user UID:GID (beeware/briefcase#403)
 # Use --non-unique to avoid problems when the UID:GID of the host user
@@ -25,10 +30,12 @@ RUN groupadd --non-unique --gid $HOST_GID briefcase && \
     mkdir -p /home/brutus && chown brutus:briefcase /home/brutus
 
 # As root, Install system packages required by app
-USER root
 ARG SYSTEM_REQUIRES
-RUN apt-get update -y && \
-    apt-get install --no-install-recommends -y build-essential ${SYSTEM_REQUIRES}
+{% if cookiecutter.vendor_base == "debian" %}
+RUN apt-get install --no-install-recommends -y build-essential ${SYSTEM_REQUIRES}
+{% else %}
+RUN yum install -y gcc make pkgconfig ${SYSTEM_REQUIRES}
+{% endif %}
 
 # Use the brutus user for operations in the container
 USER brutus
