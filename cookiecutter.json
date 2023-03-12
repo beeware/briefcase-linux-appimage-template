@@ -7,7 +7,7 @@
     "url": "https://example.com",
     "description": "Short description of app",
     "python_version": "3.X.0",
-    "manylinux_tag": "",
+    "manylinux_image": "",
     "vendor_base": "debian",
     "dockerfile_extra_content": "",
     "_extensions": [
