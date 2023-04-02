@@ -21,5 +21,7 @@ requires = [
 requires = []
 
 [tool.briefcase.app.verify-pyside2.linux.appimage]
+manylinux = "manylinux2014"
 system_requires = []
 linuxdeploy_plugins = []
+template = "../../.."

@@ -22,14 +22,21 @@ requires = [
 ]
 
 [tool.briefcase.app.verify-toga.linux.appimage]
+manylinux = "manylinux2014"
 system_requires = [
-    'gir1.2-webkit-3.0',
-    'libcairo2-dev',
-    'libgirepository1.0-dev',
-    'libgtk-3-dev',
-    'libpango1.0-dev',
-    'librsvg2-dev',
-    'libwebkitgtk-3.0-0',
+    # Needed to compile pycairo wheel
+    "cairo-gobject-devel",
+    # Needed to compile PyGObject wheel
+    "gobject-introspection-devel",
+    # Needed to provide GTK
+    "gtk3-devel",
+    # Dependencies that GTK looks for at runtime, that need to be
+    # in the build environment to be picked up by linuxdeploy
+    "libcanberra-gtk3",
+    "PackageKit-gtk3-module",
+    "gvfs-client",
+    # Needed to provide WebKit2 at runtime
+    # "webkit2gtk3",
 ]
 linuxdeploy_plugins = [
     'DEPLOY_GTK_VERSION=3 gtk',

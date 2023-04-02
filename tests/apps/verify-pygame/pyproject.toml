@@ -21,5 +21,7 @@ requires = [
 ]
 
 [tool.briefcase.app.verify-pygame.linux.appimage]
+manylinux = "manylinux2014"
 system_requires = []
 linuxdeploy_plugins = []
+template = "../../.."
