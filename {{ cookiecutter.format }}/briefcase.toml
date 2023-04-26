@@ -20,10 +20,10 @@ cleanup_paths = [
     "{{ cookiecutter.formal_name }}.AppDir/usr/python/lib/tk8*",
 ]
 
-icon.16 = "{{ cookiecutter.formal_name }}.AppDir/usr/share/icons/hicolor/16x16/apps/{{ cookiecutter.bundle }}.{{ cookiecutter.app_name }}.png"
-icon.32 = "{{ cookiecutter.formal_name }}.AppDir/usr/share/icons/hicolor/32x32/apps/{{ cookiecutter.bundle }}.{{ cookiecutter.app_name }}.png"
-icon.64 = "{{ cookiecutter.formal_name }}.AppDir/usr/share/icons/hicolor/64x64/apps/{{ cookiecutter.bundle }}.{{ cookiecutter.app_name }}.png"
-icon.128 = "{{ cookiecutter.formal_name }}.AppDir/usr/share/icons/hicolor/128x128/apps/{{ cookiecutter.bundle }}.{{ cookiecutter.app_name }}.png"
-icon.256 = "{{ cookiecutter.formal_name }}.AppDir/usr/share/icons/hicolor/256x256/apps/{{ cookiecutter.bundle }}.{{ cookiecutter.app_name }}.png"
-icon.512 = "{{ cookiecutter.formal_name }}.AppDir/usr/share/icons/hicolor/512x512/apps/{{ cookiecutter.bundle }}.{{ cookiecutter.app_name }}.png"
-# icon.scalable = "{{ cookiecutter.formal_name }}.AppDir/usr/share/icons/hicolor/scalable/apps/{{ cookiecutter.bundle }}.{{ cookiecutter.app_name }}.png"
+icon.16 = "{{ cookiecutter.formal_name }}.AppDir/usr/share/icons/hicolor/16x16/apps/{{ cookiecutter.bundle_identifier }}.png"
+icon.32 = "{{ cookiecutter.formal_name }}.AppDir/usr/share/icons/hicolor/32x32/apps/{{ cookiecutter.bundle_identifier }}.png"
+icon.64 = "{{ cookiecutter.formal_name }}.AppDir/usr/share/icons/hicolor/64x64/apps/{{ cookiecutter.bundle_identifier }}.png"
+icon.128 = "{{ cookiecutter.formal_name }}.AppDir/usr/share/icons/hicolor/128x128/apps/{{ cookiecutter.bundle_identifier }}.png"
+icon.256 = "{{ cookiecutter.formal_name }}.AppDir/usr/share/icons/hicolor/256x256/apps/{{ cookiecutter.bundle_identifier }}.png"
+icon.512 = "{{ cookiecutter.formal_name }}.AppDir/usr/share/icons/hicolor/512x512/apps/{{ cookiecutter.bundle_identifier }}.png"
+# icon.scalable = "{{ cookiecutter.formal_name }}.AppDir/usr/share/icons/hicolor/scalable/apps/{{ cookiecutter.bundle_identifier }}.png"

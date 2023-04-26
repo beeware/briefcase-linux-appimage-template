@@ -4,6 +4,7 @@
     "app_name": "{{ cookiecutter.formal_name|lower|replace(' ', '-') }}",
     "module_name": "{{ cookiecutter.app_name|replace('-', '_') }}",
     "bundle": "com.example",
+    "bundle_identifier": "{{ cookiecutter.bundle }}.{{ cookiecutter.app_name|replace('_', '-') }}",
     "url": "https://example.com",
     "description": "Short description of app",
     "python_version": "3.X.0",
