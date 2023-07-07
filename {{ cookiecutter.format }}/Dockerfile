@@ -20,7 +20,7 @@ RUN apt-get update -y && \
 RUN yum install -y git file
 {%- endif %}
 
-{% if cookiecutter.use_non_root_user == "True" -%}
+{% if cookiecutter.use_non_root_user -%}
 # Ensure Docker user UID:GID matches host user UID:GID (beeware/briefcase#403)
 # Use --non-unique to avoid problems when the UID:GID of the host user
 # collides with entries provided by the Docker container.
@@ -39,7 +39,7 @@ RUN apt-get install --no-install-recommends -y build-essential ${SYSTEM_REQUIRES
 RUN yum install -y gcc make pkgconfig ${SYSTEM_REQUIRES}
 {%- endif %}
 
-{% if cookiecutter.use_non_root_user == "True" -%}
+{% if cookiecutter.use_non_root_user -%}
 # Use the brutus user for operations in the container
 USER brutus
 {%- endif %}
