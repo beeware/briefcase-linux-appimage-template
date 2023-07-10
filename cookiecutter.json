@@ -10,6 +10,7 @@
     "python_version": "3.X.0",
     "manylinux_image": "",
     "vendor_base": "debian",
+    "use_non_root_user": true,
     "dockerfile_extra_content": "",
     "_extensions": [
         "briefcase.integrations.cookiecutter.PythonVersionExtension"
