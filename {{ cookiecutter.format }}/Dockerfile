@@ -8,6 +8,10 @@ FROM ubuntu:18.04
 # Set the working directory
 WORKDIR /app
 
+# Disable pip's warnings
+ENV PIP_ROOT_USER_ACTION=ignore \
+    PIP_NO_WARN_SCRIPT_LOCATION=0
+
 {% if cookiecutter.vendor_base == "debian" -%}
 # Make sure installation of tzdata is non-interactive
 ENV DEBIAN_FRONTEND="noninteractive"
