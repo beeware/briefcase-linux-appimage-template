@@ -8,6 +8,10 @@ FROM ubuntu:18.04
 # Set the working directory
 WORKDIR /app
 
+# Disable pip's warnings
+ENV PIP_ROOT_USER_ACTION=ignore \
+    PIP_NO_WARN_SCRIPT_LOCATION=0
+
 {% if cookiecutter.vendor_base == "debian" -%}
 # Make sure installation of tzdata is non-interactive
 ENV DEBIAN_FRONTEND="noninteractive"
@@ -28,7 +32,7 @@ ARG HOST_UID
 ARG HOST_GID
 RUN groupadd --non-unique --gid $HOST_GID briefcase && \
     useradd --non-unique --uid $HOST_UID --gid $HOST_GID brutus --home /home/brutus && \
-    mkdir -p /home/brutus && chown brutus:briefcase /home/brutus
+    mkdir -p /home/brutus/.cache/briefcase && chown -R brutus:briefcase /home/brutus
 {%- endif %}
 
 # As root, Install system packages required by app
