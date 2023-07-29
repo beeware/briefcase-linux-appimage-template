@@ -32,7 +32,7 @@ ARG HOST_UID
 ARG HOST_GID
 RUN groupadd --non-unique --gid $HOST_GID briefcase && \
     useradd --non-unique --uid $HOST_UID --gid $HOST_GID brutus --home /home/brutus && \
-    mkdir -p /home/brutus/.cache/briefcase && chown -R brutus:briefcase /home/brutus
+    mkdir -p /home/brutus && chown brutus:briefcase /home/brutus
 {%- endif %}
 
 # As root, Install system packages required by app
