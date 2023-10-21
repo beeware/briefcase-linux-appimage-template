@@ -38,9 +38,9 @@ RUN groupadd --non-unique --gid $HOST_GID briefcase && \
 # As root, Install system packages required by app
 ARG SYSTEM_REQUIRES
 {% if cookiecutter.vendor_base == "debian" -%}
-RUN apt-get install --no-install-recommends -y build-essential ${SYSTEM_REQUIRES}
+RUN apt-get install --no-install-recommends -y build-essential clang ${SYSTEM_REQUIRES}
 {%- else -%}
-RUN yum install -y gcc make pkgconfig ${SYSTEM_REQUIRES}
+RUN yum install -y gcc clang make pkgconfig ${SYSTEM_REQUIRES}
 {%- endif %}
 
 {% if cookiecutter.use_non_root_user -%}
@@ -48,8 +48,7 @@ RUN yum install -y gcc make pkgconfig ${SYSTEM_REQUIRES}
 USER brutus
 {%- endif %}
 
-# Configure builds so that clang isn't required, and put the Standalone Python on the build path
-ENV CC="gcc -pthread"
+# Put the Standalone Python on the build path
 ENV PATH="/app/{{ cookiecutter.formal_name }}.AppDir/usr/python/bin:${PATH}"
 
 # ========== START USER PROVIDED CONTENT ==========
