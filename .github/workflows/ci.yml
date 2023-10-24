@@ -33,6 +33,10 @@ jobs:
         python-version: [ "3.8", "3.9", "3.10", "3.11", "3.12" ]
         framework: [ "toga", "pyside2", "pyside6", "ppb", "pygame" ]
         exclude:
+          # PyGObject cannot be built using the current version of Standalone Python
+          # See https://github.com/indygreg/python-build-standalone/issues/194
+          - python-version: "3.12"
+            framework: "toga"
           # PySide 2 doesn't publish binary wheels that are compatible with Python 3.11+
           # and/or Ubuntu 22.04 (and is unlikely to ever do so.)
           - python-version: "3.11"

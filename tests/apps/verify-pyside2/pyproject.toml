@@ -14,7 +14,7 @@ description = "A PySide2 test app"
 icon = "src/verify_pyside2/resources/verify-pyside2"
 sources = ['src/verify_pyside2']
 requires = [
-    'pyside2>=5.15.2',
+    'pyside2~=5.15',
 ]
 
 [tool.briefcase.app.verify-pyside2.linux]
