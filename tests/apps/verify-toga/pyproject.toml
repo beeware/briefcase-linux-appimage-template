@@ -17,7 +17,9 @@ requires = [
 
 [tool.briefcase.app.verify-toga.linux]
 requires = [
-    "toga-gtk==0.3.1",
+    "toga-gtk~=0.4.0",
+    # This needs to be pinned because PyGobject 3.46 can't be installed
+    # in the manylinux environment.
     "PyGObject==3.44.1",
 ]
 
