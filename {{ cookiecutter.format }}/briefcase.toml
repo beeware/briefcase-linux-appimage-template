@@ -3,13 +3,12 @@
 app_path = "{{ cookiecutter.formal_name }}.AppDir/usr/app"
 app_packages_path = "{{ cookiecutter.formal_name }}.AppDir/usr/app_packages"
 support_path = "{{ cookiecutter.formal_name }}.AppDir/usr"
-{# using 20230826 until indygreg/python-build-standalone#194 is resolved -#}
 {{ {
-    "3.8": 'support_revision = "3.8.17+20230826"',
-    "3.9": 'support_revision = "3.9.18+20230826"',
-    "3.10": 'support_revision = "3.10.13+20230826"',
-    "3.11": 'support_revision = "3.11.5+20230826"',
-    "3.12": 'support_revision = "3.12.0+20231002"',
+    "3.8": 'support_revision = "3.8.18+20240107"',
+    "3.9": 'support_revision = "3.9.18+20240107"',
+    "3.10": 'support_revision = "3.10.13+20240107"',
+    "3.11": 'support_revision = "3.11.7+20240107"',
+    "3.12": 'support_revision = "3.12.1+20231002"',
 }.get(cookiecutter.python_version|py_tag, "") }}
 # Remove the pieces of the standalone package that we don't need.
 cleanup_paths = [
