@@ -39,4 +39,5 @@ jobs:
       fail-fast: false
       matrix:
         python-version: [ "3.8", "3.9", "3.10", "3.11", "3.12" ]
-        framework: [ "toga", "pyside6", "pygame", "console" ]
+        # Dropped PySide6 testing since v6.6.2+ seg faults (briefcase#1908)
+        framework: [ "toga", "pygame", "console" ]
