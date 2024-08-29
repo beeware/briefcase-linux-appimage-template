@@ -7,7 +7,6 @@ app_path = "{{ cookiecutter.formal_name }}.AppDir/usr/app"
 app_packages_path = "{{ cookiecutter.formal_name }}.AppDir/usr/app_packages"
 support_path = "{{ cookiecutter.formal_name }}.AppDir/usr"
 {{ {
-    "3.8": 'support_revision = "3.8.19+20240726"',
     "3.9": 'support_revision = "3.9.19+20240726"',
     "3.10": 'support_revision = "3.10.14+20240726"',
     "3.11": 'support_revision = "3.11.9+20240726"',
