@@ -7,11 +7,11 @@ app_path = "{{ cookiecutter.formal_name }}.AppDir/usr/app"
 app_packages_path = "{{ cookiecutter.formal_name }}.AppDir/usr/app_packages"
 support_path = "{{ cookiecutter.formal_name }}.AppDir/usr"
 {{ {
-    "3.10": 'support_revision = "3.10.18+20251007"',
-    "3.11": 'support_revision = "3.11.13+20251007"',
-    "3.12": 'support_revision = "3.12.11+20251007"',
-    "3.13": 'support_revision = "3.13.8+20251007"',
-    "3.14": 'support_revision = "3.14.0+20251007"',
+    "3.11": 'support_revision = "3.11.16+20260901"',
+    "3.12": 'support_revision = "3.12.14+20260901"',
+    "3.13": 'support_revision = "3.13.15+20260901"',
+    "3.14": 'support_revision = "3.14.7+20260901"',
+    "3.15": 'support_revision = "3.15.0rc2+20260901"',
 }.get(cookiecutter.python_version|py_tag, "") }}
 # Remove the pieces of the standalone package that we don't need.
 cleanup_paths = [
