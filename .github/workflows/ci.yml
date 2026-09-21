@@ -34,7 +34,7 @@ jobs:
     uses: beeware/.github/.github/workflows/app-build-verify.yml@main
     with:
       python-version: ${{ matrix.python-version }}
-      runner-os: ubuntu-latest
+      runner-os: ubuntu-24.04
       framework: ${{ matrix.framework }}
       target-platform: linux
       target-format: AppImage
