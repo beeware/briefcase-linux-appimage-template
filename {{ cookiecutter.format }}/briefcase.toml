@@ -8,27 +8,27 @@ app_packages_path = "{{ cookiecutter.formal_name }}.AppDir/usr/app_packages"
 support_path = "{{ cookiecutter.formal_name }}.AppDir/usr"
 
 {{ {
-    "3.11": 'support_revision = "3.11.16+20260901"',
-    "3.12": 'support_revision = "3.12.14+20260901"',
-    "3.13": 'support_revision = "3.13.15+20260901"',
-    "3.14": 'support_revision = "3.14.7+20260901"',
-    "3.15": 'support_revision = "3.15.0rc2+20260901"',
+    "3.11": 'support_revision = "3.11.17+20261009"',
+    "3.12": 'support_revision = "3.12.15+20261009"',
+    "3.13": 'support_revision = "3.13.16+20261009"',
+    "3.14": 'support_revision = "3.14.8+20261009"',
+    "3.15": 'support_revision = "3.15.0+20261009"',
 }.get(cookiecutter.python_version|py_tag, "") }}
 {% if cookiecutter.host_arch == "x86_64" -%}
 {{ {
-    "3.11": 'support_package_hash = "sha256:64427febea27864d136db46c8efe968eb6fa5ca2813ce1dca4bb95aec31cb2e4"',
-    "3.12": 'support_package_hash = "sha256:72748da13197c1fb161e3afeef20a6a385ff24f2165e6e2758e47008e7faba4c"',
-    "3.13": 'support_package_hash = "sha256:8a689a077337bea6d1c4bc0b7df1d52fcaa28f5f67e50df8bf417c1e3f9d8874"',
-    "3.14": 'support_package_hash = "sha256:3959f92825141e04adf44982d3a83ee57af0877e893b0796e04c1468749d9b04"',
-    "3.15": 'support_package_hash = "sha256:9549c3789acb25209da019cc8506ea5b1684b81fb4b471dc64cb47d1d04d6422"',
+    "3.11": 'support_package_hash = "sha256:89db7607ebadb77a64709d159b86555d995368ec385a2ab33b00477790c543b0"',
+    "3.12": 'support_package_hash = "sha256:ffa8f85f1b56e88b687f08d743d817015524b86a9365fd921243132b80f1a36d"',
+    "3.13": 'support_package_hash = "sha256:24801ea31c7d406d559a17e2226325c723d50c56900b9c0da7b62adaae2affc9"',
+    "3.14": 'support_package_hash = "sha256:ddc902fd26460f728758c67d80417c1031edf97589f1f162c4ba3aa158a35998"',
+    "3.15": 'support_package_hash = "sha256:46edc8f6fccade47dc38001ef2d4094d9cedd21a1863d9b44b2a02c1ee76b94d"',
 }.get(cookiecutter.python_version|py_tag, "") }}
 {% else -%}
 {{ {
-    "3.11": 'support_package_hash = "sha256:f9308ed57184fae73941c712ed847be420ce36d31ba73ce53f0508a1ee752f68"',
-    "3.12": 'support_package_hash = "sha256:577b4bec0793ad1ff0cbff9adbd0df078eddde38a4c41bf5d83ad381a85ee39d"',
-    "3.13": 'support_package_hash = "sha256:01ce0ce9189feaead3298abf10d4efe998c55a489b3d5d38ca4f83dda7e7977e"',
-    "3.14": 'support_package_hash = "sha256:8a0798baa8a2c27b5751d590aced543eaa85e20b3f73d93c1af049688acdc9c5"',
-    "3.15": 'support_package_hash = "sha256:95008f38ebde8ba8a71c03fcd2a67cdfb65ef2687415fbc7f95ec61ba7397b1c"',
+    "3.11": 'support_package_hash = "sha256:7e7e24eee3467dd666aff379c34c4ef3e6bc7142aec7d5ba783765df7da999a6"',
+    "3.12": 'support_package_hash = "sha256:2e1ba0e7f22e01c534caebf7f09e7820322bc0d055271d3434af671e8400f96f"',
+    "3.13": 'support_package_hash = "sha256:52c6993abd6ac687cceb787ecee83b166271bc06ad80ac9cac82c5d28d3c00bc"',
+    "3.14": 'support_package_hash = "sha256:54f9cd13b97add6bbd077175b6d89f974cc582ece1c40ace1893067582edaf0e"',
+    "3.15": 'support_package_hash = "sha256:00345e47b7f42d10ec60d28b2ccad6b1f33c40697f0ae57ee15d70896efad0b5"',
 }.get(cookiecutter.python_version|py_tag, "") }}
 {% endif -%}
 
